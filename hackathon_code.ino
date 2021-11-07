@@ -1,14 +1,14 @@
-int trigPin = 9;
-int echoPin = 10;
-int led = 7;
+int trigPin = 5;
+int echoPin = 6;
+int led = 4;
 // set up the general pins for the motor 
 int enRight = 3;
-int rightA = 2;
-int rightB = 4;
+int rightA = 0;
+int rightB = 1;
 // setup left motors 
 int enLeft = 11; 
-int leftA = 12;
-int leftB = 13;
+int leftA = 2;
+int leftB = 3;
 
 void forward(int pinA,int pinB);
 void stop(int pinA,int pinB);
@@ -45,7 +45,7 @@ void loop() {
   digitalWrite(trigPin,HIGH); // turns the trigger on i think 
   delayMicroseconds(1000); // delay for one seconds 
   digitalWrite(trigPin,LOW); // turns the trigger off
-  duration = pulseIn(echoPin,HIGH); // sets the duration equal to how long the sound takes to return
+  duration = pulseIn(echoPin,LOW); // sets the duration equal to how long the sound takes to return
   distance = (duration/2)/29.1; // converts the duration to a distance  
   Serial.print(distance); // prints the distance to a 'serial monitor' (what is this?)
   Serial.print("CM"); // prints the units (metric system babeyy)
